@@ -2,7 +2,6 @@ import request from 'supertest';
 import app from '../../src/app';
 import axios, { AxiosResponse } from 'axios';
 
-// Mock de axios para evitar llamadas a la API real
 jest.mock('axios');
 
 describe('Search API', () => {
