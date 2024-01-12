@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-import fs from 'fs';
 
 describe('Environment Variables', () => {
   beforeAll(() => {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const token = process.env.GITHUB_ACCESS_TOKEN;
-const query = 'angular'; //Provisional query.
+const query = 'moneyWise'; //Provisional query.
 
 const getSearchSuggestions = async () => {
   try {
