@@ -1,12 +1,12 @@
+import { Router, Request, Response } from 'express';
 import SearchSuggestionsHandler from '../handlers/SearchSuggestionsHandler';
-import { Router } from 'express';
+
 const routes = Router();
 
-
-routes.get('/', (req, res) => {
+routes.get('/', (req: Request, res: Response) => {
   res.send({ message: 'Hello API' });
 });
 
-routes.get('/search-suggestions', SearchSuggestionsHandler);
+routes.get('/search-suggestions/:query', SearchSuggestionsHandler);
 
 export default routes;

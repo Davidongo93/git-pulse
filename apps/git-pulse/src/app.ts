@@ -1,15 +1,15 @@
-import express from "express";
-import routes from "./routes/index"
-const app = express();
+import express, { Express, Request, Response, NextFunction } from "express";
+import routes from "./routes/index";
+
+const app: Express = express();
 
 // Routing
 app.use('/', routes);
 
-// Error catching endware.
-app.use((err, req, res, next) => {
-  // eslint-disable-line no-unused-vars
-  const status = err.status || 500;
-  const message = err.message || err;
+// Error catching middleware.
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+  const status: number = err.status || 500;
+  const message: string = err.message || err;
   console.error(err);
   res.status(status).send(message);
 });
