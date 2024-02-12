@@ -7,17 +7,10 @@
  \______| |__|     |__|           | _|       \______/  |_______|_______/    |_______|
                                                                                     
 */
+import app from './app';
 
-
-import express from 'express';
-const host = process.env.HOST ?? 'localhost';
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
-
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
-});
+const host: string = process.env.HOST ?? 'localhost';
+const port: number = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
