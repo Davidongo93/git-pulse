@@ -1,0 +1,28 @@
+{
+  "name": "git-pulse-web-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/git-pulse-web-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/git-pulse-web-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "git-pulse-web:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "git-pulse-web:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "git-pulse-web:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["git-pulse-web"]
+}
